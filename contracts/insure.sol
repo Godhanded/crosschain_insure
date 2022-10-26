@@ -59,6 +59,22 @@ contract DefiInsure is AxelarExecutable {
         if (!sent) revert DefiInsure__TxFailed();
     }
 
+    function withdrawOtherchains( string calldata destinationChain,
+        address destinationAddress,
+        address to,
+        uint256 amount)external payable {
+            bytes memory payload= abi.encode(to,amount);
+            if (msg.value > 0) {
+            i_gasReceiver.payNativeGasForContractCall{ value: msg.value }(
+                address(this),
+                destinationChain,
+                destinationAddress.toString(),
+                payload,
+                msg.sender
+            );
+            }
+        }
+
     function getEntity(string calldata id)
         external
         view
