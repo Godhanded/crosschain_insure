@@ -20,22 +20,28 @@ contract DefiInsure is AxelarExecutable {
 
     IAxelarGasService public immutable i_gasReceiver;
 
+    event FalseSender(string sourceAddress);
+
     mapping(string => entity) private s_insured;
 
     uint256 public s_balance;
     uint256 public s_netStaked;
     uint256 public s_netEntities;
 
-    address private s_owner;
-
     uint256 constant MINIMUM_VALUE = 200;
     uint256 constant DECIMALS = 1e18;
 
-    constructor(address gateway_, address gasReceiver_)
-        AxelarExecutable(gateway_)
-    {
+    address private s_owner;
+    address private immutable CALLER;
+
+    constructor(
+        address gateway_,
+        address gasReceiver_,
+        address caller_
+    ) AxelarExecutable(gateway_) {
         s_owner = msg.sender;
         i_gasReceiver = IAxelarGasService(gasReceiver_);
+        CALLER = caller_;
     }
 
     function payInsurance(string calldata id) external payable {
@@ -56,31 +62,25 @@ contract DefiInsure is AxelarExecutable {
         /**function to pull stake from external staking contract */
     }
 
-    function withdraw(address addr, uint256 amount) external {
-        if (msg.sender != s_owner) revert DefiInsure__NotOwner();
+    function _withdraw(address addr, uint256 amount) internal {
         (bool sent, ) = payable(addr).call{value: amount}("");
         if (!sent) revert DefiInsure__TxFailed();
     }
 
-    function withdrawOtherchains(
-        string calldata destinationChain,
-        address destinationAddress,
-        address to,
-        uint256 amount
-    ) external payable {
-        if (msg.sender != s_owner) revert DefiInsure__NotOwner();
-        bytes memory payload = abi.encode(to, amount);
-        string memory stringAddr = destinationAddress.toString();
-        if (msg.value > 0) {
-            i_gasReceiver.payNativeGasForContractCall{value: msg.value}(
-                address(this),
-                destinationChain,
-                stringAddr,
-                payload,
-                msg.sender
-            );
+    function _execute(
+        string calldata, /*sourceChain*/
+        string calldata sourceAddress,
+        bytes calldata payload
+    ) internal override {
+        if (sourceAddress.toAddress() != CALLER) {
+            emit FalseSender(sourceAddress);
+            return;
         }
-        gateway.callContract(destinationChain, stringAddr, payload);
+        (address _to, uint256 _amount) = abi.decode(
+            payload,
+            (address, uint256)
+        );
+        _withdraw(_to, _amount);
     }
 
     function getEntity(string calldata id)
