@@ -5,3 +5,4 @@ cache
 .env
 env
 yarn-error.log
+.gitpod.yml
