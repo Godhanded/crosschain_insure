@@ -1,0 +1,7 @@
+node_modules
+deployments
+artifacts
+cache
+.env
+env
+yarn-error.log
