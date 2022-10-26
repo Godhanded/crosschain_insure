@@ -10,7 +10,7 @@ error DefiInsure__InvalidValue();
 error DefiInsure__NotOwner();
 error DefiInsure__TxFailed();
 
-contract DefiInsure is AxelarExecutable{
+contract DefiInsure is AxelarExecutable {
     using StringToAddress for string;
     using AddressToString for address;
     struct entity {
@@ -31,13 +31,11 @@ contract DefiInsure is AxelarExecutable{
     uint256 constant MINIMUM_VALUE = 200;
     uint256 constant DECIMALS = 1e18;
 
-    constructor(
-        address gateway_,
-        address gasReceiver_
-
-    ) AxelarExecutable(gateway_) {
+    constructor(address gateway_, address gasReceiver_)
+        AxelarExecutable(gateway_)
+    {
         s_owner = msg.sender;
-        i_gasReceiver= IAxelarGasService(gasReceiver_);
+        i_gasReceiver = IAxelarGasService(gasReceiver_);
     }
 
     function payInsurance(string calldata id) external payable {
