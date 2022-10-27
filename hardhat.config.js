@@ -27,18 +27,17 @@ module.exports = {
             chainId: 97,
             blockConfirmations: 3,
         },
-        polygon:{
-            url:process.env.POLYGONCHAIN,
-            accounts:[process.env.PRIVATE_KEY],
-            chainId:80001,
-            blockConfirmations:3
+        polygon: {
+            url: process.env.POLYGONCHAIN,
+            accounts: [process.env.PRIVATE_KEY],
+            chainId: 80001,
+            blockConfirmations: 3,
         },
-        fantom:{
-            url:process.env.FTM_RPC_URL,
-            accounts:[process.env.PRIVATE_KEY],
-            chainId:4002
-        }
-
+        fantom: {
+            url: process.env.FTM_RPC_URL,
+            accounts: [process.env.PRIVATE_KEY],
+            chainId: 4002,
+        },
     },
     etherscan: {
         apiKey: process.env.BLOCKSCAN_API,

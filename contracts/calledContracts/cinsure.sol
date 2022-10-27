@@ -60,11 +60,11 @@ contract CDefiInsure is AxelarExecutable {
 
     function unStake(address addr, uint256 amount) external {
         /**function to pull stake from external staking contract */
-        s_netStaked-=amount;
+        s_netStaked -= amount;
     }
 
     function _withdraw(address addr, uint256 amount) internal {
-        s_balance-=amount;
+        s_balance -= amount;
         (bool sent, ) = payable(addr).call{value: amount}("");
         if (!sent) revert DefiInsure__TxFailed();
     }

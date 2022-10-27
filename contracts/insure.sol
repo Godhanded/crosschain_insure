@@ -54,12 +54,12 @@ contract DefiInsure is AxelarExecutable {
 
     function unStake(address addr, uint256 amount) external {
         /**function to pull stake from external staking contract */
-        s_netStaked-=amount;
+        s_netStaked -= amount;
     }
 
     function withdraw(address addr, uint256 amount) external {
         if (msg.sender != s_owner) revert DefiInsure__NotOwner();
-        s_balance-=amount;
+        s_balance -= amount;
         (bool sent, ) = payable(addr).call{value: amount}("");
         if (!sent) revert DefiInsure__TxFailed();
     }
