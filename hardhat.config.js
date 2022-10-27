@@ -24,20 +24,32 @@ module.exports = {
         bnb: {
             url: process.env.BNBCHAINURL,
             accounts: [process.env.PRIVATE_KEY],
-            chainId: 39,
+            chainId: 97,
             blockConfirmations: 3,
         },
+        polygon:{
+            url:process.env.POLYGONCHAIN,
+            accounts:[process.env.PRIVATE_KEY],
+            chainId:80001,
+            blockConfirmations:3
+        },
+        fantom:{
+            url:process.env.FTM_RPC_URL,
+            accounts:[process.env.PRIVATE_KEY],
+            chainId:4002
+        }
+
     },
     etherscan: {
         apiKey: process.env.BLOCKSCAN_API,
     },
-    gasReporter: {
-        enabled: true,
-        coinmarketcap: process.env.COINMARKETCAP_API,
-        currency: "USD",
-        noColors: false,
-        // outputFile:"gas-report.txt"
-    },
+    // gasReporter: {
+    //     enabled: true,
+    //     coinmarketcap: process.env.COINMARKETCAP_API,
+    //     currency: "USD",
+    //     noColors: false,
+    //     // outputFile:"gas-report.txt"
+    // },
     namedAccounts: {
         deployer: {
             default: 0,

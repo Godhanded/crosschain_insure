@@ -10,7 +10,7 @@ error DefiInsure__InvalidValue();
 error DefiInsure__NotOwner();
 error DefiInsure__TxFailed();
 
-contract DefiInsure is AxelarExecutable {
+contract CDefiInsure is AxelarExecutable {
     using StringToAddress for string;
     using AddressToString for address;
     struct entity {
