@@ -6,7 +6,6 @@ const {
 } = require("../helper-hardhat-config");
 require("dotenv").config();
 const { verify } = require("../utils/verify");
-const { json } = require("hardhat/internal/core/params/argumentTypes");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { log, deploy } = deployments;
@@ -15,12 +14,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     let gateway=networkConfig[chainId]["gateway"]
     let gasReceiver= networkConfig[chainId]["gasReceiver"]
+    let deployedContract="DefiInsure";
      
-    const args = [gateway,gasReceiver,"0x92134fF22E609B9A630e9f2528cF3D9E7bc210d3"];
+    const args = [gateway,gasReceiver];
     if(chainId!=97) {
-        const callerAddr=  json.parse(fs.readFileSync("../deployments/bnb/DefiInsure.json","utf8"))
+        const callerAddr=  JSON.parse(fs.readFileSync("deployments/bnb/DefiInsure.json","utf8"))
 
         args.push(callerAddr["address"])
+        deployedContract="CDefiInsure"
     }
     console.log(args)
     log("---------------------------------------------------------------");
@@ -28,7 +29,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log("deploying contract and waiting for confirmations");
 
 
-    const contract = await deploy("CDefiInsure", {
+    const contract = await deploy(deployedContract, {
         from: deployer,
         args: args,
         log: true,
