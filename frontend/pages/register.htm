@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <button>
+            <span>connect wallet</span>
+        </button>
+    </header>
+    <main>
+        <h2>register company</h2>
+        <p>
+            Conserv is a decentralised insurance and regulatory platform built to unify, insure and manage plastic
+            producing companies, recycling process and more to ensure sustainability of oceans, seas and safe health of
+            aquatic animals.
+        </p>
+        <form action="#" class="register_company">
+            <div>
+                <label for="c-name">company name</label>
+                <input type="text" id="c-name">
+            </div>
+            <div>
+                <label for="c-mail">e-mail address</label>
+                <input type="text" id="c-mail">
+            </div>
+            <div>
+                <label for="c-location">company location</label>
+                <textarea id="c-location"></textarea>
+            </div>
+            <div>
+                <label for="upload">upload any verification documenent</label>
+                <div>
+                    <input type="file" id="upload">
+                    <label for="upload">upload document</label>
+                    <i class="uil uil-file-upload"></i>
+                </div>
+            </div>
+            <p>
+                By proceeding to payment you hereby accept all the <span>terms</span> & <span>conditions</span>
+                highlighted in the documetation of Conserv and therefore give consent to be protected under the suite of
+                Conserv which protects your company and its operations.
+            </p>
+            <div>
+                <input type="checkbox" id="terms">
+                <label for="terms">i have read and accepted</label>
+            </div>
+            <a href="#notification" id="generate">
+                generate licence ID
+            </a>
+        </form>
+        <form action="#" class="license_fee">
+            <h2>registration licence fee</h2>
+            <div>
+                <span>$200</span>
+                <span>
+                    <img src="../images/binance.png" alt=""> bnb
+                </span>
+            </div>
+            <p>Conserv insurance licence costs $200 and it's an annual payment</p>
+            <button>
+                make payment
+            </button>
+        </form>
+    </main>
+    <section class="notification" id="notification">
+        <div>
+            <a href="#"><i class="uim uim-times-circle"></i></a>
+            <div>
+                <h3>license ID: <span id="id-number">1376531</span></h3>
+                <i class="uil uil-check-circle"></i>
+                <span>ID successfully generated</span>
+            </div>
+        </div>
+    </section>
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

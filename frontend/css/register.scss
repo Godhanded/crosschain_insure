@@ -1,0 +1,295 @@
+$--font-1: 'Manjari',
+sans-serif;
+$--font-2: 'Poppins',
+sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $--font-1;
+}
+
+body {
+    background: linear-gradient(158.72deg, #CFAFFF 0%, #A6C6D1 100%);
+}
+
+header {
+    background-color: rgba(255, 255, 255);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 100px;
+
+    button {
+        justify-content: flex-end;
+        height: 60px;
+        padding: 0 20px;
+        background-color: rgba(255, 255, 255);
+        border: 1px solid rgba(179, 192, 223, 1);
+        border-radius: 32px;
+
+        span {
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 1.3125rem;
+            color: rgba(179, 192, 223, 1);
+        }
+    }
+}
+
+main {
+    padding: 150px;
+    color: white;
+
+    >h2 {
+        text-transform: capitalize;
+        font-size: 2.75rem;
+        font-family: $--font-2;
+    }
+
+    >p {
+        font-family: $--font-2;
+        font-weight: 400;
+        font-size: 1.375rem;
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .register_company {
+        margin: 100px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            label {
+                font-family: $--font-2;
+                font-size: 2.75rem;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+
+            input,
+            textarea {
+                background-color: transparent;
+                border: 1px solid white;
+                height: 75px;
+                border-radius: 32px;
+                resize: none;
+                outline: none;
+                width: 100%;
+            }
+
+            &:nth-of-type(4) {
+                >div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: relative;
+                    height: 195px;
+                    padding: 0 50px;
+                    border: 2px solid white;
+                    border-radius: 32px;
+                    margin-top: 30px;
+
+                    input {
+                        border: none;
+                        border-radius: 0;
+                        display: none;
+                    }
+
+                    label {
+                        font-size: 2.25rem;
+                        color: rgba(182, 118, 232, 0.65);
+                        cursor: pointer;
+                    }
+
+                    i {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                flex-direction: row;
+                align-items: center;
+
+                input {
+                    height: 20px;
+                    width: 20px;
+                    accent-color: rgba(182, 118, 232, 0.65);
+                }
+
+                label {
+                    font-size: 1.5rem;
+                    color: rgba(182, 118, 232, 0.65);
+                }
+            }
+        }
+
+        >p {
+            font-size: 1.375rem;
+            font-family: $--font-2;
+
+            span {
+                font-family: inherit;
+                color: rgba(187, 144, 235, 1);
+                cursor: pointer;
+                font-weight: 600;
+            }
+        }
+
+        >a {
+            height: 150px;
+            border-radius: 32px;
+            background-color: rgba(255, 255, 255);
+            outline: none;
+            border: none;
+            font-family: $--font-2;
+            font-weight: 400;
+            font-size: 2.75rem;
+            text-transform: capitalize;
+            color: rgba(186, 176, 230, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
+
+    .license_fee {
+        padding: 50px 0;
+
+        h2 {
+            font-family: $--font-2;
+            font-weight: 500;
+            font-size: 2.75rem;
+            text-transform: capitalize;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid white;
+            padding: 50px 75px;
+            border-radius: 32px;
+            margin: 40px 0;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.75rem;
+                text-transform: uppercase;
+                font-family: $--font-2;
+                gap: 10px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        p {
+            font-family: $--font-2;
+            font-weight: 400;
+            font-style: 1.375rem;
+        }
+
+        button {
+            margin-top: 40px;
+            height: 150px;
+            border-radius: 32px;
+            background-color: rgba(255, 255, 255);
+            outline: none;
+            border: none;
+            font-family: $--font-2;
+            font-weight: 400;
+            font-size: 2.75rem;
+            text-transform: capitalize;
+            color: rgba(186, 176, 230, 1);
+            cursor: pointer;
+            width: 100%;
+        }
+    }
+}
+
+.notification {
+    // border: 100px solid;
+    position: fixed;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, .5);
+
+    >div {
+        position: relative;
+        background-color: rgba(255, 255, 255);
+        width: 70%;
+        padding: 100px;
+
+        >a {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            text-decoration: none;
+            font-size: 3rem;
+            color: rgba(182, 118, 232, 0.65);
+        }
+
+        >div {
+            padding: 50px 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            border: 2px solid rgba(188, 176, 232, 1);
+            border-radius: 32px;
+
+            h3 {
+                font-size: 2.5rem;
+                font-family: $--font-2;
+                text-transform: capitalize;
+                color: rgba(187, 144, 235, 1);
+
+                span {
+                    font-family: inherit;
+                    font-size: inherit;
+                    color: inherit;
+                    font-weight: 400;
+                }
+            }
+
+            i {
+                font-size: 5rem;
+                color: rgba(53, 214, 146, 1);
+            }
+
+            span {
+                color: rgba(53, 214, 146, 1);
+                font-size: 1.5625rem;
+                font-family: $--font-2;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    display: none;
+
+    &:target {
+        display: flex;
+    }
+}
