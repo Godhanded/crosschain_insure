@@ -1,5 +1,4 @@
-// import { ethers } from "./ethers-5.6.esm.min.js";
-// import { addresses, abi } from "../../constants/addresses.js";
+
 const { origin } = location
 console.log(origin)
 function register() {
@@ -15,17 +14,11 @@ Moralis.start({
     appId,
   });
   
-  // document.getElementById("connect").onclick=handleAuth('metamask')
 const check = async() => {
     if (!window.ethereum)
         alert(
             "Sorry a browser wallet is required before you can use this service"
         );
-        // const provider='metamask';
-        // await Moralis.enableWeb3({ throwOnError: true, provider });
-        //  const { chainId } = await Moralis;
-        // console.log( )
-        // console.log(addresses[parseInt(chainId)]["address"], chainId, addresses.chainId.address)
 
 };
 
@@ -68,9 +61,10 @@ async function pay(provider) {
 
   await Moralis.enableWeb3({ throwOnError: true, provider });
   const { chainId } = Moralis;
-  const renewIdNumber= document.querySelector("#c-id");
-  const id=(renewIdNumber.textContent=="") ? document.querySelector("#id-number").textContent : renewIdNumber.textContent;
+  const renewIdNumber= document.getElementById("cid");
   
+  const id=(renewIdNumber.textContent=="") ? document.querySelector("#id-number").textContent.toString() : renewIdNumber.value.toString();
+ 
   let option = {
     contractAddress: addresses[parseInt(chainId)].address,
     functionName: "payInsurance",
@@ -78,6 +72,7 @@ async function pay(provider) {
     params: {
       id: id, 
     },
+    msgValue:Moralis.Units.ETH(200)
   };
 
   let result = await Moralis.executeFunction(option);

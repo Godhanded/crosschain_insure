@@ -1,4 +1,3 @@
-// import {pay} from "./script.js"
 
 const
     idNumber = document.querySelector("#id-number"),
@@ -12,4 +11,4 @@ generateButtonEl.onclick = () => {
     idNumber.textContent = randomIdNumber(999999, 99999999);
 };
 
-// document.getElementById("pay").onclick=pay
+document.getElementById("pay").onclick=pay
