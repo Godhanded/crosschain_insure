@@ -1,9 +1,10 @@
 // import { ethers } from "./ethers-5.6.esm.min.js";
 // import { addresses, abi } from "../../constants/addresses.js";
 const { origin } = location
+console.log(origin)
 function register() {
     // event.preventDefault();
-    location.href = `${origin}/pages/register.htm`;
+    location.href = `${origin}/frontend/pages/register.htm`;
 };
 const serverUrl = "https://parse-server-moralised.herokuapp.com/server";
 const appId = "master";
