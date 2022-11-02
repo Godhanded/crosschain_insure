@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://unpkg.com/moralis-v1@latest/dist/moralis.js"></script>
+    <script src="../constants/addresses.js"></script>
+    
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
+    <!-- <script src="./js/script.js" type="module"></script> -->
     <header>
         <div class="logo">
             conserv
@@ -34,7 +39,7 @@
             </ul>
         </nav>
         <div class="nav_action">
-            <button id="connect" onclick="connect()">connect wallet</button>
+            <button id="connect" onClick="handleAuth('metamask')">connect wallet</button>
         </div>
     </header>
     <main>
@@ -299,7 +304,7 @@
                     </p>
                 </div>
                 <div class="register_right">
-                    <button id="register">get started</button>
+                    <button id="register" onclick="register()">get started</button>
                 </div>
             </div>
             <p>

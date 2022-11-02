@@ -1,4 +1,22 @@
-[
+var addresses = {
+    97: {
+        name: "BNB",
+        address: "0xE4e85a3Ba248F4a58961FdaB27D484Ce6910362e",
+        url: "https://testnet.bscscan.com/address/0xE4e85a3Ba248F4a58961FdaB27D484Ce6910362e",
+    },
+    80001: {
+        name: "Polygon",
+        address: "0xE9bdB979287Fc773a895fa86653E9B38f550F8A0",
+        url: "https://mumbai.polygonscan.com/address/0xE9bdB979287Fc773a895fa86653E9B38f550F8A0",
+    },
+    4002: {
+        name: "FTM",
+        address: "0xD088e93c5934D19b5440c89216D51B5AB70e437b",
+        url: "https://testnet.ftmscan.com/address/0xD088e93c5934D19b5440c89216D51B5AB70e437b",
+    },
+};
+
+var abi=[
     {
         "inputs": [
             {
@@ -299,3 +317,4 @@
         "type": "function"
     }
 ]
+

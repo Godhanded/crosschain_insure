@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/moralis-v1@latest/dist/moralis.js"></script>
+    <script type="text/javascript" src="../../constants/addresses.js"></script>
+    <!-- <script type="text/javascript" src="../js/script.js"></script> -->
+
     <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <script type="text/javascript" src="../js/script.js"></script>
+
     <header>
         <button>
             <span>connect wallet</span>
@@ -54,9 +60,15 @@
                 Conserv which protects your company and its operations.
             </p>
             <div>
+                <label for="c-id">Enter id if you're renewing</label>
+                <input type="text" id="c-id">
+            </div>
+            <div>
                 <input type="checkbox" id="terms">
                 <label for="terms">i have read and accepted</label>
             </div>
+          
+
             <a href="#notification" id="generate">
                 generate licence ID
             </a>
@@ -64,13 +76,13 @@
         <form action="#" class="license_fee">
             <h2>registration licence fee</h2>
             <div>
-                <span>$200</span>
+                <span>200</span>
                 <span>
                     <img src="../images/binance.png" alt=""> bnb
                 </span>
             </div>
-            <p>Conserv insurance licence costs $200 and it's an annual payment</p>
-            <button>
+            <p>Conserv insurance licence costs 200bnb and it's an annual payment</p>
+            <button id="pay" onclick="pay('metamask')">
                 make payment
             </button>
         </form>
@@ -81,12 +93,17 @@
             <div>
                 <h3>license ID: <span id="id-number">1376531</span></h3>
                 <i class="uil uil-check-circle"></i>
-                <span>ID successfully generated</span>
+                <span>ID successfully generated, Please copy down and keep safe</span>
             </div>
         </div>
     </section>
+    <!-- <script type="text/javascript" src="../js/script.js"></script> -->
+  
+
     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
-    <script src="../js/register.js"></script>
+    <script src="../js/register.js" ></script>
+    
+    
 </body>
 
 </html>
