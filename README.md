@@ -36,7 +36,7 @@
 
     - Fantom [0xD088e93c5934D19b5440c89216D51B5AB70e437b](https://testnet.ftmscan.com/address/0xD088e93c5934D19b5440c89216D51B5AB70e437b#code)
 
-    - polygon [0xE9bdB979287Fc773a895fa86653E9B38f550F8A0](hhttps://mumbai.polygonscan.com/address/0xE9bdB979287Fc773a895fa86653E9B38f550F8A0#code)
+    - polygon [0xE9bdB979287Fc773a895fa86653E9B38f550F8A0](https://mumbai.polygonscan.com/address/0xE9bdB979287Fc773a895fa86653E9B38f550F8A0#code)
 
 - **Axelar** > [see here](#axelar-protocol)
 
