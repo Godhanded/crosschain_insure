@@ -23,7 +23,7 @@
 > ## Project Description
 
 <p><b style="color:orange">Decentralised insurance and regulatory platform</b> built to insure after-use liability of plastics to ensure sustainability of ocean and aquatic animals.
-<b style="color:orange">Conserv<b> is a decentralised insurance platform built on Binance/FTM/Polygon chain with multichain function/interoperability,to unify plastic manufacturing companies and control ocean pollution caused by plastic after use dumping,which was estimated to be over 8 million tons found in the ocean, our platform registers plastic producing company and shares the license fee paid ($2000) into 2 automatically in a smart contract call,uses 50% as company insurance security(put in a staking platform) and 50% as an after use liability tax used to fund projects on ocean cleaning,plastic in ocean recycling and plastic waste control .  </p>
+<b style="color:orange">Conserv</b> is a decentralised insurance platform built on Binance/FTM/Polygon chain with multichain function/interoperability,to unify plastic manufacturing companies and control ocean pollution caused by plastic after use dumping,which was estimated to be over 8 million tons found in the ocean, our platform registers plastic producing company and shares the license fee paid ($2000) into 2 automatically in a smart contract call,uses 50% as company insurance security(put in a staking platform) and 50% as an after use liability tax used to fund projects on ocean cleaning,plastic in ocean recycling and plastic waste control .  </p>
 
 #
 ## Important/Live Hosted Project Links
