@@ -3,7 +3,7 @@ const { origin } = location
 console.log(origin)
 function register() {
     // event.preventDefault();
-    location.href = `${origin}/frontend/pages/register.htm`;
+    location.href = `${origin}/pages/register.htm`;
 };
 const serverUrl = "https://parse-server-moralised.herokuapp.com/server";
 const appId = "master";
