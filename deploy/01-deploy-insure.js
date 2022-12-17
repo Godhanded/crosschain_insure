@@ -13,6 +13,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const chainId = network.config.chainId;
 
     let deployedContract = "DefiInsure";
+    let args=[];
 
     if (chainId != 97) {
         const callerAddr = JSON.parse(
@@ -29,6 +30,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     const contract = await deploy(deployedContract, {
         from: deployer,
+        args:args,
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     });

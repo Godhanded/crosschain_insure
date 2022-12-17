@@ -34,8 +34,8 @@ contract DefiInsure {
     uint256 public s_netEntities;
 
     address private s_owner;
-    address public anycallcontractrinkeby =
-        0x273a4fFcEb31B8473D51051Ad2a2EdbB7Ac8Ce02;
+    address public anycallbnbcontract =
+        0xD2b88BA56891d43fB7c108F23FE6f92FEbD32045;
     uint256 constant MINIMUM_VALUE = 200;
     uint256 constant DECIMALS = 1e18;
 
@@ -78,11 +78,11 @@ contract DefiInsure {
         if (msg.sender != s_owner) revert DefiInsure__NotOwner();
         require(
             msg.value >=
-                CallProxy(anycallcontractrinkeby).calcSrcFees("0", chainId, 32),
+                CallProxy(anycallbnbcontract).calcSrcFees("0", chainId, 32),
             "INSUFFICIENT FEE"
         );
 
-        CallProxy(anycallcontractrinkeby).anyCall{value: msg.value}(
+        CallProxy(anycallbnbcontract).anyCall{value: msg.value}(
             destinationAddress,
             // sending the encoded bytes of the string msg and decode on the destination chain
             abi.encode(to, amount, address(this)),
