@@ -1,252 +1,252 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Manjari", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manjari", sans-serif;
 }
 
 body {
-  background: linear-gradient(158.72deg, #CFAFFF 0%, #A6C6D1 100%);
+    background: linear-gradient(158.72deg, #cfafff 0%, #a6c6d1 100%);
 }
 
 header {
-  background-color: rgb(255, 255, 255);
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 20px 100px;
+    background-color: rgb(255, 255, 255);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 100px;
 }
 header button {
-  justify-content: flex-end;
-  height: 60px;
-  padding: 0 20px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(179, 192, 223);
-  border-radius: 32px;
+    justify-content: flex-end;
+    height: 60px;
+    padding: 0 20px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(179, 192, 223);
+    border-radius: 32px;
 }
 header button span {
-  font-weight: 700;
-  text-transform: capitalize;
-  font-size: 1.3125rem;
-  color: rgb(179, 192, 223);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.3125rem;
+    color: rgb(179, 192, 223);
 }
 
 main {
-  padding: 150px;
-  color: white;
+    padding: 150px;
+    color: white;
 }
 main > h2 {
-  text-transform: capitalize;
-  font-size: 2.75rem;
-  font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-size: 2.75rem;
+    font-family: "Poppins", sans-serif;
 }
 main > p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 1.375rem;
-  width: 80%;
-  margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.375rem;
+    width: 80%;
+    margin-top: 20px;
 }
 main .register_company {
-  margin: 100px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 main .register_company > div {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 main .register_company > div label {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.75rem;
-  font-weight: 400;
-  text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 main .register_company > div input,
 main .register_company > div textarea {
-  background-color: transparent;
-  border: 1px solid white;
-  height: 75px;
-  border-radius: 32px;
-  resize: none;
-  outline: none;
-  width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    height: 75px;
+    border-radius: 32px;
+    resize: none;
+    outline: none;
+    width: 100%;
 }
 main .register_company > div:nth-of-type(4) > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  height: 195px;
-  padding: 0 50px;
-  border: 2px solid white;
-  border-radius: 32px;
-  margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 195px;
+    padding: 0 50px;
+    border: 2px solid white;
+    border-radius: 32px;
+    margin-top: 30px;
 }
 main .register_company > div:nth-of-type(4) > div input {
-  border: none;
-  border-radius: 0;
-  display: none;
+    border: none;
+    border-radius: 0;
+    display: none;
 }
 main .register_company > div:nth-of-type(4) > div label {
-  font-size: 2.25rem;
-  color: rgba(182, 118, 232, 0.65);
-  cursor: pointer;
+    font-size: 2.25rem;
+    color: rgba(182, 118, 232, 0.65);
+    cursor: pointer;
 }
 main .register_company > div:nth-of-type(4) > div i {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 main .register_company > div:last-of-type {
-  flex-direction: row;
-  align-items: center;
+    flex-direction: row;
+    align-items: center;
 }
 main .register_company > div:last-of-type input {
-  height: 20px;
-  width: 20px;
-  accent-color: rgba(182, 118, 232, 0.65);
+    height: 20px;
+    width: 20px;
+    accent-color: rgba(182, 118, 232, 0.65);
 }
 main .register_company > div:last-of-type label {
-  font-size: 1.5rem;
-  color: rgba(182, 118, 232, 0.65);
+    font-size: 1.5rem;
+    color: rgba(182, 118, 232, 0.65);
 }
 main .register_company > p {
-  font-size: 1.375rem;
-  font-family: "Poppins", sans-serif;
+    font-size: 1.375rem;
+    font-family: "Poppins", sans-serif;
 }
 main .register_company > p span {
-  font-family: inherit;
-  color: rgb(187, 144, 235);
-  cursor: pointer;
-  font-weight: 600;
+    font-family: inherit;
+    color: rgb(187, 144, 235);
+    cursor: pointer;
+    font-weight: 600;
 }
 main .register_company > a {
-  height: 150px;
-  border-radius: 32px;
-  background-color: rgb(255, 255, 255);
-  outline: none;
-  border: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 2.75rem;
-  text-transform: capitalize;
-  color: rgb(186, 176, 230);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+    height: 150px;
+    border-radius: 32px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.75rem;
+    text-transform: capitalize;
+    color: rgb(186, 176, 230);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 main .license_fee {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 main .license_fee h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 2.75rem;
-  text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 2.75rem;
+    text-transform: capitalize;
 }
 main .license_fee div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid white;
-  padding: 50px 75px;
-  border-radius: 32px;
-  margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid white;
+    padding: 50px 75px;
+    border-radius: 32px;
+    margin: 40px 0;
 }
 main .license_fee div span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.75rem;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    gap: 10px;
 }
 main .license_fee div span img {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 main .license_fee p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: 1.375rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: 1.375rem;
 }
 main .license_fee button {
-  margin-top: 40px;
-  height: 150px;
-  border-radius: 32px;
-  background-color: rgb(255, 255, 255);
-  outline: none;
-  border: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 2.75rem;
-  text-transform: capitalize;
-  color: rgb(186, 176, 230);
-  cursor: pointer;
-  width: 100%;
+    margin-top: 40px;
+    height: 150px;
+    border-radius: 32px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.75rem;
+    text-transform: capitalize;
+    color: rgb(186, 176, 230);
+    cursor: pointer;
+    width: 100%;
 }
 
 .notification {
-  position: fixed;
-  bottom: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+    position: fixed;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
 }
 .notification > div {
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  width: 70%;
-  padding: 100px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    padding: 100px;
 }
 .notification > div > a {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  text-decoration: none;
-  font-size: 3rem;
-  color: rgba(182, 118, 232, 0.65);
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    text-decoration: none;
+    font-size: 3rem;
+    color: rgba(182, 118, 232, 0.65);
 }
 .notification > div > div {
-  padding: 50px 75px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  border: 2px solid rgb(188, 176, 232);
-  border-radius: 32px;
+    padding: 50px 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border: 2px solid rgb(188, 176, 232);
+    border-radius: 32px;
 }
 .notification > div > div h3 {
-  font-size: 2.5rem;
-  font-family: "Poppins", sans-serif;
-  text-transform: capitalize;
-  color: rgb(187, 144, 235);
+    font-size: 2.5rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    color: rgb(187, 144, 235);
 }
 .notification > div > div h3 span {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  font-weight: 400;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: 400;
 }
 .notification > div > div i {
-  font-size: 5rem;
-  color: rgb(53, 214, 146);
+    font-size: 5rem;
+    color: rgb(53, 214, 146);
 }
 .notification > div > div span {
-  color: rgb(53, 214, 146);
-  font-size: 1.5625rem;
-  font-family: "Poppins", sans-serif;
-  text-transform: capitalize;
+    color: rgb(53, 214, 146);
+    font-size: 1.5625rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
 }
 .notification:target {
-  display: flex;
-}/*# sourceMappingURL=register.css.map */
+    display: flex;
+} /*# sourceMappingURL=register.css.map */

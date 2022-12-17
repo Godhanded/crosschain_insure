@@ -1,8 +1,5 @@
-$--font-1: 'Manjari',
-sans-serif;
-$--font-2: 'Poppins',
-sans-serif;
-
+$--font-1: "Manjari", sans-serif;
+$--font-2: "Poppins", sans-serif;
 
 * {
     margin: 0;
@@ -12,7 +9,7 @@ sans-serif;
 }
 
 body {
-    background: linear-gradient(158.72deg, #CFAFFF 0%, #A6C6D1 100%);
+    background: linear-gradient(158.72deg, #cfafff 0%, #a6c6d1 100%);
 }
 
 header {
@@ -78,7 +75,7 @@ main {
         height: 100vh;
         position: relative;
 
-        >i {
+        > i {
             position: absolute;
             right: 25%;
             top: 30px;
@@ -89,12 +86,12 @@ main {
             justify-content: center;
             font-style: normal;
             border-radius: 50%;
-            background-color: rgb(255, 255, 255, .15);
+            background-color: rgb(255, 255, 255, 0.15);
             box-shadow: 0 3px 10px rgb(0, 0, 0, 0.1);
 
             span {
                 background-color: rgb(255, 255, 255);
-                color: #21A5B5;
+                color: #21a5b5;
                 border-radius: 50%;
                 height: 25px;
                 width: 25px;
@@ -188,7 +185,7 @@ main {
         gap: 20px;
         position: relative;
 
-        >i {
+        > i {
             position: absolute;
             height: 45px;
             width: 45px;
@@ -197,7 +194,7 @@ main {
             justify-content: center;
             font-style: normal;
             border-radius: 50%;
-            background-color: rgb(255, 255, 255, .15);
+            background-color: rgb(255, 255, 255, 0.15);
             box-shadow: 0 3px 10px rgb(0, 0, 0, 0.1);
 
             &:nth-of-type(1) {
@@ -212,7 +209,7 @@ main {
 
             span {
                 background-color: rgb(255, 255, 255);
-                color: #21A5B5;
+                color: #21a5b5;
                 border-radius: 50%;
                 height: 25px;
                 width: 25px;
@@ -237,13 +234,13 @@ main {
             font-family: $--font-2;
         }
 
-        >p {
+        > p {
             text-align: justify;
             width: min(60%, 1200px);
             font-size: 1.4375rem;
         }
 
-        >span {
+        > span {
             position: absolute;
             top: 40px;
             width: 100%;
@@ -251,7 +248,7 @@ main {
             justify-content: space-between;
         }
 
-        >div {
+        > div {
             display: flex;
             margin-top: 70px;
             justify-content: space-between;
@@ -280,14 +277,18 @@ main {
         padding: 100px 150px;
         display: flex;
 
-        >div {
+        > div {
             padding: 20px 100px 50px 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
             border: 1px solid;
-            background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+            background: linear-gradient(
+                180deg,
+                rgba(105, 79, 192, 0.03) 0%,
+                rgba(172, 153, 233, 0.59) 100%
+            );
 
             &:nth-of-type(1) {
                 border-top-left-radius: 50px;
@@ -335,7 +336,7 @@ main {
         justify-content: space-between;
         width: 100%;
 
-        >i {
+        > i {
             position: absolute;
             top: 0;
             height: 45px;
@@ -345,7 +346,7 @@ main {
             justify-content: center;
             font-style: normal;
             border-radius: 50%;
-            background-color: rgb(255, 255, 255, .15);
+            background-color: rgb(255, 255, 255, 0.15);
             box-shadow: 0 3px 10px rgb(0, 0, 0, 0.1);
 
             &:nth-of-type(1) {
@@ -358,7 +359,7 @@ main {
 
             span {
                 background-color: rgb(255, 255, 255);
-                color: #21A5B5;
+                color: #21a5b5;
                 border-radius: 50%;
                 height: 25px;
                 width: 25px;
@@ -376,7 +377,7 @@ main {
             }
         }
 
-        >div {
+        > div {
             width: 40%;
             display: flex;
             flex-direction: column;
@@ -404,7 +405,11 @@ main {
                     font-size: 1.25rem;
                     font-weight: 700;
                     color: rgb(255, 255, 255);
-                    background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+                    background: linear-gradient(
+                        180deg,
+                        rgba(105, 79, 192, 0.03) 0%,
+                        rgba(172, 153, 233, 0.59) 100%
+                    );
                     cursor: pointer;
 
                     &::first-letter {
@@ -417,7 +422,7 @@ main {
                 justify-content: center;
                 align-items: center;
 
-                >div {
+                > div {
                     padding: 10px 30px;
                     display: flex;
                     gap: 20px;
@@ -425,14 +430,18 @@ main {
                     justify-content: center;
 
                     &:nth-of-type(2) {
-                        background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+                        background: linear-gradient(
+                            180deg,
+                            rgba(105, 79, 192, 0.03) 0%,
+                            rgba(172, 153, 233, 0.59) 100%
+                        );
                         border-radius: 25px;
                     }
 
-                    >span {
+                    > span {
                         display: flex;
                         position: relative;
-                        background-color: #CFAFFF;
+                        background-color: #cfafff;
                         align-items: center;
                         justify-content: center;
                         min-height: 50px;
@@ -448,20 +457,20 @@ main {
                         }
                     }
 
-                    >div {
+                    > div {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
                         gap: 5px;
 
-                        >h4 {
+                        > h4 {
                             text-transform: capitalize;
                             font-family: $--font-2;
                             font-weight: 700;
                             font-size: 1.25rem;
                         }
 
-                        >p {
+                        > p {
                             font-size: 1.125rem;
                         }
                     }
@@ -478,10 +487,14 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 100px;
-        background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+        background: linear-gradient(
+            180deg,
+            rgba(105, 79, 192, 0.03) 0%,
+            rgba(172, 153, 233, 0.59) 100%
+        );
         border-radius: 25px;
 
-        >span {
+        > span {
             position: absolute;
             right: 100px;
             top: 50px;
@@ -501,12 +514,12 @@ main {
                 justify-content: center;
                 font-style: normal;
                 border-radius: 50%;
-                background-color: rgb(255, 255, 255, .15);
+                background-color: rgb(255, 255, 255, 0.15);
                 box-shadow: 0 3px 10px rgb(0, 0, 0, 0.1);
 
                 span {
                     background-color: rgb(255, 255, 255);
-                    color: #21A5B5;
+                    color: #21a5b5;
                     border-radius: 50%;
                     height: 25px;
                     width: 25px;
@@ -524,7 +537,7 @@ main {
             }
         }
 
-        >div {
+        > div {
             &:nth-of-type(1) {
                 display: flex;
                 flex-direction: column;
@@ -553,13 +566,13 @@ main {
             flex-direction: column;
             gap: 75px;
 
-            >div {
+            > div {
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
                 border-bottom: 1px solid white;
 
-                >span {
+                > span {
                     font-size: 2.25rem;
                     font-family: $--font-2;
                     font-weight: 400;
@@ -569,7 +582,7 @@ main {
                     }
                 }
 
-                >div {
+                > div {
                     display: flex;
                     justify-content: space-between;
 
@@ -616,14 +629,18 @@ main {
             align-items: center;
             justify-content: space-evenly;
             gap: 200px;
-            background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+            background: linear-gradient(
+                180deg,
+                rgba(105, 79, 192, 0.03) 0%,
+                rgba(172, 153, 233, 0.59) 100%
+            );
 
-            >div {
+            > div {
                 display: flex;
                 flex-direction: column;
                 gap: 100px;
 
-                >div {
+                > div {
                     &:nth-of-type(1) {
                         position: relative;
 
@@ -655,7 +672,7 @@ main {
                             border-radius: 50%;
                         }
 
-                        >div {
+                        > div {
                             display: flex;
                             flex-direction: column;
 
@@ -669,7 +686,7 @@ main {
                                 }
 
                                 &:nth-of-type(2) {
-                                    font-size: .75rem;
+                                    font-size: 0.75rem;
                                     color: rgba(255, 255, 255, 0.78);
                                 }
                             }
@@ -687,10 +704,16 @@ main {
         flex-direction: column;
         gap: 20px;
 
-        >div {
+        > div {
             padding: 75px 100px;
             margin: 50px;
-            background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(140, 118, 214, 0.324583) 0%, rgba(254, 254, 255, 0.324583) 99.99%, rgba(172, 153, 233, 0.59) 100%);
+            background: linear-gradient(
+                180deg,
+                rgba(105, 79, 192, 0.03) 0%,
+                rgba(140, 118, 214, 0.324583) 0%,
+                rgba(254, 254, 255, 0.324583) 99.99%,
+                rgba(172, 153, 233, 0.59) 100%
+            );
             border-radius: 45px;
             display: flex;
             justify-content: space-between;
@@ -730,7 +753,11 @@ main {
                     font-weight: 700;
                     color: rgb(255, 255, 255);
                     border: 1px solid white;
-                    background: linear-gradient(180deg, rgba(105, 79, 192, 0.03) 0%, rgba(172, 153, 233, 0.59) 100%);
+                    background: linear-gradient(
+                        180deg,
+                        rgba(105, 79, 192, 0.03) 0%,
+                        rgba(172, 153, 233, 0.59) 100%
+                    );
                     border-radius: 25px;
                     text-transform: capitalize;
                     cursor: pointer;
@@ -738,7 +765,7 @@ main {
             }
         }
 
-        >p {
+        > p {
             display: flex;
             align-items: center;
             gap: 5px;

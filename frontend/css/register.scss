@@ -1,8 +1,5 @@
-$--font-1: 'Manjari',
-sans-serif;
-$--font-2: 'Poppins',
-sans-serif;
-
+$--font-1: "Manjari", sans-serif;
+$--font-2: "Poppins", sans-serif;
 
 * {
     margin: 0;
@@ -12,7 +9,7 @@ sans-serif;
 }
 
 body {
-    background: linear-gradient(158.72deg, #CFAFFF 0%, #A6C6D1 100%);
+    background: linear-gradient(158.72deg, #cfafff 0%, #a6c6d1 100%);
 }
 
 header {
@@ -44,13 +41,13 @@ main {
     padding: 150px;
     color: white;
 
-    >h2 {
+    > h2 {
         text-transform: capitalize;
         font-size: 2.75rem;
         font-family: $--font-2;
     }
 
-    >p {
+    > p {
         font-family: $--font-2;
         font-weight: 400;
         font-size: 1.375rem;
@@ -64,7 +61,7 @@ main {
         flex-direction: column;
         gap: 50px;
 
-        >div {
+        > div {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -88,7 +85,7 @@ main {
             }
 
             &:nth-of-type(4) {
-                >div {
+                > div {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -134,7 +131,7 @@ main {
             }
         }
 
-        >p {
+        > p {
             font-size: 1.375rem;
             font-family: $--font-2;
 
@@ -146,7 +143,7 @@ main {
             }
         }
 
-        >a {
+        > a {
             height: 150px;
             border-radius: 32px;
             background-color: rgba(255, 255, 255);
@@ -233,15 +230,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 0, .5);
+    background-color: rgb(0, 0, 0, 0.5);
 
-    >div {
+    > div {
         position: relative;
         background-color: rgba(255, 255, 255);
         width: 70%;
         padding: 100px;
 
-        >a {
+        > a {
             position: absolute;
             right: 25px;
             top: 25px;
@@ -250,7 +247,7 @@ main {
             color: rgba(182, 118, 232, 0.65);
         }
 
-        >div {
+        > div {
             padding: 50px 75px;
             display: flex;
             flex-direction: column;

@@ -1,24 +1,31 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
-import {IAxelarGateway} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol";
-import {IAxelarGasService} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol";
-import {AxelarExecutable} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/executables/AxelarExecutable.sol";
-import {StringToAddress, AddressToString} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/StringAddressUtils.sol";
+interface CallProxy {
+    function anyCall(
+        address _to,
+        bytes calldata _data,
+        address _fallback,
+        uint256 _toChainID,
+        uint256 _flags
+    ) external payable;
+
+    function calcSrcFees(
+        string calldata _appID,
+        uint256 _toChainID,
+        uint256 _dataLength
+    ) external view returns (uint256);
+}
 
 error DefiInsure__InvalidValue();
 error DefiInsure__NotOwner();
 error DefiInsure__TxFailed();
 
-contract DefiInsure is AxelarExecutable {
-    using StringToAddress for string;
-    using AddressToString for address;
+contract DefiInsure {
     struct entity {
         address entityAddr;
         uint256 deadline;
     }
-
-    IAxelarGasService public immutable i_gasReceiver;
 
     mapping(string => entity) private s_insured;
 
@@ -27,15 +34,13 @@ contract DefiInsure is AxelarExecutable {
     uint256 public s_netEntities;
 
     address private s_owner;
-
+    address public anycallcontractrinkeby =
+        0x273a4fFcEb31B8473D51051Ad2a2EdbB7Ac8Ce02;
     uint256 constant MINIMUM_VALUE = 200;
     uint256 constant DECIMALS = 1e18;
 
-    constructor(address gateway_, address gasReceiver_)
-        AxelarExecutable(gateway_)
-    {
+    constructor() {
         s_owner = msg.sender;
-        i_gasReceiver = IAxelarGasService(gasReceiver_);
     }
 
     function payInsurance(string calldata id) external payable {
@@ -65,24 +70,29 @@ contract DefiInsure is AxelarExecutable {
     }
 
     function withdrawOtherchains(
-        string calldata destinationChain,
         address destinationAddress,
         address to,
-        uint256 amount
+        uint256 amount,
+        uint256 chainId
     ) external payable {
         if (msg.sender != s_owner) revert DefiInsure__NotOwner();
-        bytes memory payload = abi.encode(to, amount);
-        string memory stringAddr = destinationAddress.toString();
-        if (msg.value > 0) {
-            i_gasReceiver.payNativeGasForContractCall{value: msg.value}(
-                address(this),
-                destinationChain,
-                stringAddr,
-                payload,
-                msg.sender
-            );
-        }
-        gateway.callContract(destinationChain, stringAddr, payload);
+        require(
+            msg.value >=
+                CallProxy(anycallcontractrinkeby).calcSrcFees("0", chainId, 32),
+            "INSUFFICIENT FEE"
+        );
+
+        CallProxy(anycallcontractrinkeby).anyCall{value: msg.value}(
+            destinationAddress,
+            // sending the encoded bytes of the string msg and decode on the destination chain
+            abi.encode(to, amount, address(this)),
+            // 0x as fallback address because we don't have a fallback function
+            address(0),
+            // chainid of ftm testnet
+            chainId,
+            // Using 2 flag to pay fee on destination chain
+            2
+        );
     }
 
     function getEntity(string calldata id)

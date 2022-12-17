@@ -1,24 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
-import {IAxelarGateway} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol";
-import {IAxelarGasService} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol";
-import {AxelarExecutable} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/executables/AxelarExecutable.sol";
-import {StringToAddress, AddressToString} from "@axelar-network/axelar-gmp-sdk-solidity/contracts/StringAddressUtils.sol";
-
 error DefiInsure__InvalidValue();
 error DefiInsure__NotOwner();
 error DefiInsure__TxFailed();
 
-contract CDefiInsure is AxelarExecutable {
-    using StringToAddress for string;
-    using AddressToString for address;
+contract CDefiInsure {
     struct entity {
         address entityAddr;
         uint256 deadline;
     }
-
-    IAxelarGasService public immutable i_gasReceiver;
 
     event FalseSender(string sourceAddress);
 
@@ -34,13 +25,8 @@ contract CDefiInsure is AxelarExecutable {
     address private s_owner;
     address private immutable CALLER;
 
-    constructor(
-        address gateway_,
-        address gasReceiver_,
-        address caller_
-    ) AxelarExecutable(gateway_) {
+    constructor(address caller_) {
         s_owner = msg.sender;
-        i_gasReceiver = IAxelarGasService(gasReceiver_);
         CALLER = caller_;
     }
 
@@ -69,20 +55,21 @@ contract CDefiInsure is AxelarExecutable {
         if (!sent) revert DefiInsure__TxFailed();
     }
 
-    function _execute(
-        string calldata, /*sourceChain*/
-        string calldata sourceAddress,
-        bytes calldata payload
-    ) internal override {
-        if (sourceAddress.toAddress() != CALLER) {
-            emit FalseSender(sourceAddress);
-            return;
-        }
-        (address _to, uint256 _amount) = abi.decode(
-            payload,
-            (address, uint256)
+    function anyExecute(bytes memory _data)
+        external
+        returns (bool success, bytes memory result)
+    {
+        (address _to, uint256 _amount, address sourceAddress) = abi.decode(
+            _data,
+            (address, uint256, address)
         );
+        if (sourceAddress != CALLER) {
+            revert();
+        }
+
         _withdraw(_to, _amount);
+        success = true;
+        result = "";
     }
 
     function getEntity(string calldata id)
