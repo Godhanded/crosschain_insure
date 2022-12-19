@@ -1,35 +1,20 @@
 var addresses = {
     97: {
         name: "BNB",
-        address: "0xE4e85a3Ba248F4a58961FdaB27D484Ce6910362e",
-        url: "https://testnet.bscscan.com/address/0xE4e85a3Ba248F4a58961FdaB27D484Ce6910362e",
+        address: "0xeFf5D7c9ea237a0Ad814AB5FF07eE9805B837F13",
+        url: "https://testnet.bscscan.com/address/0xeFf5D7c9ea237a0Ad814AB5FF07eE9805B837F13#code",
     },
-    80001: {
-        name: "Polygon",
-        address: "0xE9bdB979287Fc773a895fa86653E9B38f550F8A0",
-        url: "https://mumbai.polygonscan.com/address/0xE9bdB979287Fc773a895fa86653E9B38f550F8A0",
-    },
+
     4002: {
         name: "FTM",
-        address: "0xD088e93c5934D19b5440c89216D51B5AB70e437b",
-        url: "https://testnet.ftmscan.com/address/0xD088e93c5934D19b5440c89216D51B5AB70e437b",
+        address: "0x1D94b4EFe2310157dCD84a1F8a95cc8e6ceA29A9",
+        url: "https://testnet.ftmscan.com/address/0x1d94b4efe2310157dcd84a1f8a95cc8e6cea29a9#code",
     },
 };
 
 var abi = [
     {
-        inputs: [
-            {
-                internalType: "address",
-                name: "gateway_",
-                type: "address",
-            },
-            {
-                internalType: "address",
-                name: "gasReceiver_",
-                type: "address",
-            },
-        ],
+        inputs: [],
         stateMutability: "nonpayable",
         type: "constructor",
     },
@@ -50,86 +35,10 @@ var abi = [
     },
     {
         inputs: [],
-        name: "InvalidAddress",
-        type: "error",
-    },
-    {
-        inputs: [],
-        name: "NotApprovedByGateway",
-        type: "error",
-    },
-    {
-        inputs: [
-            {
-                internalType: "bytes32",
-                name: "commandId",
-                type: "bytes32",
-            },
-            {
-                internalType: "string",
-                name: "sourceChain",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "sourceAddress",
-                type: "string",
-            },
-            {
-                internalType: "bytes",
-                name: "payload",
-                type: "bytes",
-            },
-        ],
-        name: "execute",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
-    {
-        inputs: [
-            {
-                internalType: "bytes32",
-                name: "commandId",
-                type: "bytes32",
-            },
-            {
-                internalType: "string",
-                name: "sourceChain",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "sourceAddress",
-                type: "string",
-            },
-            {
-                internalType: "bytes",
-                name: "payload",
-                type: "bytes",
-            },
-            {
-                internalType: "string",
-                name: "tokenSymbol",
-                type: "string",
-            },
-            {
-                internalType: "uint256",
-                name: "amount",
-                type: "uint256",
-            },
-        ],
-        name: "executeWithToken",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
-    {
-        inputs: [],
-        name: "gateway",
+        name: "anycallbnbcontract",
         outputs: [
             {
-                internalType: "contract IAxelarGateway",
+                internalType: "address",
                 name: "",
                 type: "address",
             },
@@ -182,19 +91,6 @@ var abi = [
                 internalType: "struct DefiInsure.entity",
                 name: "",
                 type: "tuple",
-            },
-        ],
-        stateMutability: "view",
-        type: "function",
-    },
-    {
-        inputs: [],
-        name: "i_gasReceiver",
-        outputs: [
-            {
-                internalType: "contract IAxelarGasService",
-                name: "",
-                type: "address",
             },
         ],
         stateMutability: "view",
@@ -291,11 +187,6 @@ var abi = [
     {
         inputs: [
             {
-                internalType: "string",
-                name: "destinationChain",
-                type: "string",
-            },
-            {
                 internalType: "address",
                 name: "destinationAddress",
                 type: "address",
@@ -308,6 +199,11 @@ var abi = [
             {
                 internalType: "uint256",
                 name: "amount",
+                type: "uint256",
+            },
+            {
+                internalType: "uint256",
+                name: "chainId",
                 type: "uint256",
             },
         ],
